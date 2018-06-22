@@ -1,0 +1,16 @@
+<h1>ツイート一覧</h1>
+
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+
+<% @twitters.each do |twitter| %>
+  <tr>
+    <td><%= twitter.content %></td>
+    <td><%= link_to '詳細を確認する', twitter_path(twitter.id) %></td>
+    <td><%= link_to "ツイートを編集する", edit_twitter_path(twitter.id) %></td>
+    <td><%= link_to "ツイートを削除する",  twitter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </tr>
+<% end %>
+</table>

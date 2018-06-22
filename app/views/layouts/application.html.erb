@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+    <%= image_tag 'he.png' %>
+    <%= link_to "twitter一覧画面にもどる", twitters_path %>
+    <%= link_to "投稿する", new_twitter_path %>
+  </header>
+  <%= yield %>
+
+  </body>
+</html>

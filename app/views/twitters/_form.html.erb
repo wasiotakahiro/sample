@@ -1,0 +1,20 @@
+<%= form_with(model: @twitter, local: true) do |form| %>
+  <% if @twitter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @twitter.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @twitter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="twitter_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "twitter一覧画面にもどる", twitters_path %>
